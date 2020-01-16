@@ -3,9 +3,11 @@ package com.springframework.udemy.sfgpetclinic.services.map;
 import com.springframework.udemy.sfgpetclinic.model.Owner;
 import com.springframework.udemy.sfgpetclinic.model.Pet;
 import com.springframework.udemy.sfgpetclinic.services.CrudService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetMapServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
 
     @Override

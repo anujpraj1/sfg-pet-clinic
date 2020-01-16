@@ -1,12 +1,9 @@
 package com.springframework.udemy.sfgpetclinic.bootstrap;
 
-import com.springframework.udemy.sfgpetclinic.controllers.VetController;
 import com.springframework.udemy.sfgpetclinic.model.Owner;
 import com.springframework.udemy.sfgpetclinic.model.Vet;
 import com.springframework.udemy.sfgpetclinic.services.OwnerService;
 import com.springframework.udemy.sfgpetclinic.services.VetService;
-import com.springframework.udemy.sfgpetclinic.services.map.OwnerMapServiceMap;
-import com.springframework.udemy.sfgpetclinic.services.map.VetMapServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -16,10 +13,11 @@ public class DataInitializer implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataInitializer() {
-        ownerService = new OwnerMapServiceMap();
-        vetService = new VetMapServiceMap();
+    public DataInitializer(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
+
 
     @Override
     public void run(String... args) throws Exception {
